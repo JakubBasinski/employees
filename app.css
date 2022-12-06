@@ -1,0 +1,281 @@
+:root {
+  --active-color: #097969;
+  --finish-color: #0e41aa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.info {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+
+  /* margin-left: 1rem; */
+}
+
+.info img {
+  width: 4rem;
+  height: 4rem;
+}
+
+
+.info img:hover {
+border-radius: 5px;
+border: solid transparent
+ 5px;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-image: url('./images/t.png');
+}
+
+label,
+input,
+textarea {
+  display: block;
+  margin: 0;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.1rem;
+}
+
+input,
+textarea {
+  font: inherit;
+  padding: 0.2rem 0.4rem;
+  width: 100%;
+  max-width: 30rem;
+  border: 1px solid #ccc;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  /* background: #eff3f2; */
+  border: 1px solid var(--active-color);
+}
+
+button {
+  font: inherit;
+  background: var(--active-color);
+  border: 1px solid var(--active-color);
+  cursor: pointer;
+  color: white;
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  height: 40px;
+}
+
+button:focus {
+  outline: none;
+}
+
+#active-project-list,
+#finished-project-list,
+#trash-project-list {
+  background-color: white;
+  cursor: grab;
+}
+
+button:hover,
+button:active {
+  background: #086858;
+  border-color: #086858;
+}
+
+.projects {
+  margin: 1rem;
+  border: 1px solid var(--active-color);
+  width: 75%;
+  margin: auto;
+  margin-top: 3rem;
+}
+.projects header {
+  background: var(--active-color);
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#finished-projects {
+  border-color: var(--finish-color);
+}
+
+#finished-projects header {
+  background: var(--finish-color);
+}
+
+.projects h2 {
+  margin: 0;
+  color: white;
+}
+
+.projects ul {
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+.projects li {
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  margin: 1rem;
+  background-color: white;
+}
+
+.projects li h2 {
+  color: var(--active-color);
+  margin: 0.5rem 0;
+}
+
+#finished-projects li h2 {
+  color: var(--finish-color);
+}
+
+.projects li h3 {
+  color: #575757;
+  font-size: 1rem;
+}
+
+.project li p {
+  margin: 0;
+}
+
+#active-projects .droppable {
+  background: #b7cecb;
+}
+
+#finished-projects .droppable {
+  background: #d6e1ff;
+}
+
+#trash-projects .droppable {
+  background: #c0c1c2;
+}
+
+#user-input {
+  margin: auto;
+  margin-top: 4.5rem;
+  padding: 1rem;
+  border: 1px solid var(--active-color);
+  background: #f7f7f7;
+  width: 75%;
+  display: flex;
+  height: 20rem;
+  text-align: center;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+#trash-projects {
+  border-color: #575757;
+}
+
+#trash-projects header {
+  background: #575757;
+}
+
+#trash-projects li h2 {
+  color: #575757;
+}
+
+#smietnik {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  color: #222;
+}
+
+#smietnik:hover {
+  cursor: pointer;
+}
+
+#active-project-list.grabbing,
+#finished-project-list.grabbing,
+#trash-project-list.grabbing {
+  cursor: grabbing;
+}
+
+.grabbing {
+  cursor: grabbing!;
+}
+
+#active-project-list > li:hover {
+  box-shadow: 0px 0px 15px 7.5px var(--active-color);
+}
+
+#finished-project-list > li:hover {
+  box-shadow: 0px 0px 15px 7.5px var(--finish-color);
+}
+
+#trash-project-list > li:hover {
+  box-shadow: 0px 0px 15px 7.5px #575757;
+}
+
+#formId {
+  width: 40%;
+}
+
+#workersActive {
+  width: 30%;
+  height: 11.5rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: var(--active-color);
+  border: solid 1px var(--active-color);
+  font-size: 1.5rem;
+  padding: 2rem;
+  background-color: white;
+  margin: 1rem 1rem 1rem 2rem;
+  font-weight: 550;
+  position: relative;
+  top: -9px;
+}
+
+#workersActive > p {
+  font-size: 5rem;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 15px;
+}
+
+#workersBusy {
+  width: 30%;
+  height: 11.5rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: var(--finish-color);
+  border: solid 1px var(--finish-color);
+  font-size: 1.5rem;
+  padding: 2rem;
+  background-color: white;
+  margin: 1rem 1rem 1rem 2rem;
+  font-weight: 550;
+  position: relative;
+  top: -9px;
+}
+
+#workersBusy > p {
+  font-size: 5rem;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 15px;
+}
